@@ -1,25 +1,36 @@
 /*
- * gpio_hal.h
- *
-   This program is free software: you can redistribute it and/or modify
+    This file is part of ST8DD_User.
+
+    Foobar is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
+    Foobar is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    along with ST8DD_User.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
 #ifndef INC_GPIO_HAL_H_
 #define INC_GPIO_HAL_H_
 
+/*****************************************************************************/
+/*                                 INCLUDES                                  */
+/*****************************************************************************/
+
 #include "ST8DD_Error.h"
+/*****************************************************************************/
+/*                         PUBLIC MACROS DEFINITONS                          */
+/*****************************************************************************/
+/*****************************************************************************/
+/*                         PUBLIC TYPES DEFINITIONS                          */
+/*****************************************************************************/
+
 /**
  * Enumeration with the possible values of a GPIO port
  */
@@ -59,5 +70,11 @@ typedef struct stST8_GPIO_Interface
 	ST8DD_ErrorCodes (*GetValueGPIO)(ST8DD_GPIO_Handle Handle,ST8DD_GPIO_Level *Dir);
 } ST8_GPIO_Interface;
 
+/*****************************************************************************/
+/*                             PUBLIC VARIABLES                              */
+/*****************************************************************************/
+/*****************************************************************************/
+/*                        PUBLIC FUNCTIONS PROTOTYPES                        */
+/*****************************************************************************/
 
 #endif /* INC_GPIO_HAL_H_ */
