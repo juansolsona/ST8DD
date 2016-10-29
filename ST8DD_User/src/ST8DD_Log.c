@@ -30,6 +30,9 @@
 #include "ST8DD_Types.h"
 #include "ST8DD_Log.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 /*****************************************************************************/
 /*                         PRIVATE MACROS DEFINITONS                         */
 /*****************************************************************************/
@@ -70,7 +73,10 @@ const char *ST8DD_GetLogLevelStr(ST8DD_LogLevel X)
 	return ((X > sizeof(ST8DD_LogLevelStr)/ sizeof(ST8DD_LogLevelStr[0])? "?????" : ST8DD_LogLevelStr[X]));
 }
 
-
+/**
+ * Composr of a log message, this function builds the log string
+ * @param format
+ */
 void ST8DD_ComposeLog(const char *format,...)
 {
    va_list va_ar;
@@ -80,6 +86,9 @@ void ST8DD_ComposeLog(const char *format,...)
    ST8DD_RawLog(Message);
 }
 
+#ifdef __cplusplus
+}
+#endif
 
 /*****************************************************************************/
 /*                                   END                                     */

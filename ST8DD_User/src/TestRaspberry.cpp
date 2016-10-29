@@ -33,6 +33,8 @@
 #include "ST8DD_GPIO_HAL.h"
 #include "ST8DD_Types.h"
 #include "ST8DD_Log.h"
+
+
 /*****************************************************************************/
 /*                         PRIVATE MACROS DEFINITONS                         */
 /*****************************************************************************/
@@ -50,85 +52,14 @@
 /*****************************************************************************/
 
 
-int TestGPIO(void)
-{
-   extern ST8_GPIO_Interface ST8_RPI_GPIO_Interface;
-   ST8DD_ErrorCodes ErrCode;
-   ST8DD_GPIO_Handle Handle;
-   ST8DD_GPIO_Handle Handle2;
-// LogLevelInfo("Enter " __func__);
-   ErrCode = ST8_RPI_GPIO_Interface.RequestGPIO(1, &Handle);
-   if (ST8DD_Err_NoError != ErrCode)
-   {
-      LogError("Error testing GPIO %d", ErrCode);
-   }
-   else
-   {
-      LogInfo("Now releasing the GPIO");
-      ErrCode = ST8_RPI_GPIO_Interface.ReleaseGPIO(Handle);
-      if (ST8DD_Err_NoError != ErrCode)
-      {
-         LogError("Error releasing GPIO %d", ErrCode);
-      }
-      else
-      {
-         LogInfo("Now releasing second instance of a GPIO");
-         ErrCode = ST8_RPI_GPIO_Interface.RequestGPIO(1, &Handle);
-         if (ST8DD_Err_NoError != ErrCode)
-         {
-            LogError("Error testing GPIO %d", ErrCode);
-         }
-         else
-         {
-            ErrCode = ST8_RPI_GPIO_Interface.RequestGPIO(2, &Handle2);
-            if (ST8DD_Err_NoError != ErrCode)
-            {
-               LogError("Error requesting 2nd GPIO %d", ErrCode);
-            }
-            else
-            {
-               ErrCode = ST8_RPI_GPIO_Interface.ReleaseGPIO(Handle2);
-               if (ST8DD_Err_NoError != ErrCode)
-               {
-                  LogError("Error releasing 2nd GPIO %d", ErrCode);
-               }
-               else
-               {
-                  ErrCode = ST8_RPI_GPIO_Interface.ReleaseGPIO(Handle);
-                  if (ST8DD_Err_NoError != ErrCode)
-                  {
-                     LogError("Error releasing first GPIO %d", ErrCode);
-                  }
-                  else
-                  {
-                     /* Now, let's create a orphan GPIO that shall be released by
-                      * the application destrucgor
-                      */
-                     ErrCode = ST8_RPI_GPIO_Interface.RequestGPIO(22, &Handle2);
-                     if (ST8DD_Err_NoError != ErrCode)
-                     {
-                        LogError("Error requesting 2nd GPIO %d", ErrCode);
-                     }
-                     else
-                     LogInfo("GPIO TEst OK");
-
-                  }
-
-               }
-            }
-         }
-      }
-   }
-
-   return 0;
-}
 /*****************************************************************************/
 /*                    PUBLIC FUNCTIONS IMPLEMENTATIONS                       */
 /*****************************************************************************/
-int main(void)
+int main(int argc,char **argv)
 {
+   extern int run_tests(int argc, char **argv);
 	LogInfo("App start");
-	TestGPIO();
+	return run_tests(argc, argv);
 	return EXIT_SUCCESS;
 }
 /*****************************************************************************/

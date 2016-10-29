@@ -25,6 +25,9 @@
 
 
 #include <stdio.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /*****************************************************************************/
 /*                         PUBLIC MACROS DEFINITONS                          */
@@ -33,7 +36,7 @@
 #define TOSTRING(x) STRINGIFY(x)
 #define FILELINE(X) (__FILE__ "::" TOSTRING(__LINE__))
 #define FILENAME_LEN 48
-#define LOG_FORMAT "%-6s:%-"TOSTRING(FILENAME_LEN)"."TOSTRING(FILENAME_LEN)"s:"
+#define LOG_FORMAT "%-6s:%-" TOSTRING(FILENAME_LEN) "." TOSTRING(FILENAME_LEN) "s:"
 #define LogInfo(format,args...)  ST8DD_ComposeLog(LOG_FORMAT format,ST8DD_GetLogLevelStr(LogLevelInfo) ,FILELINE(__LINE__), ##args)
 #define LogWarn(format,args...)  ST8DD_ComposeLog(LOG_FORMAT format,ST8DD_GetLogLevelStr(LogLevelWarn) ,FILELINE(__LINE__), ##args)
 #define LogError(format,args...) ST8DD_ComposeLog(LOG_FORMAT format,ST8DD_GetLogLevelStr(LogLevelError),FILELINE(__LINE__), ##args)
@@ -63,4 +66,7 @@ extern const char *enST8DD_LogLevelStr[];
 void ST8DD_RawLog(const char *format);
 void ST8DD_ComposeLog(const char *format,...);
 const char *ST8DD_GetLogLevelStr(ST8DD_LogLevel );
+#ifdef __cplusplus
+}
+#endif
 #endif /* INC_ST8DD_LOG_H_ */

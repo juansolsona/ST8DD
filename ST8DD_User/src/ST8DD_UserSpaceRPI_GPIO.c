@@ -27,6 +27,10 @@
 #include "malloc.h"
 #include "string.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*****************************************************************************/
 /*                         PRIVATE MACROS DEFINITONS                         */
 /*****************************************************************************/
@@ -469,6 +473,9 @@ static ST8DD_ErrorCodes ST8DD_RPI_GetValueGPIO(ST8DD_GPIO_Handle Handle,
    return RetValue;
 }
 
+#ifdef __cplusplus
+}
+#endif
 /*****************************************************************************/
 /*                                   END                                     */
 /*****************************************************************************/

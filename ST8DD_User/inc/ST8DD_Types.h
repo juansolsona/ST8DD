@@ -22,6 +22,10 @@
 /*                                 INCLUDES                                  */
 /*****************************************************************************/
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*****************************************************************************/
 /*                         PUBLIC MACROS DEFINITONS                          */
 /*****************************************************************************/
@@ -42,9 +46,13 @@ typedef signed short s16;
 
 typedef unsigned char u8;
 typedef signed char s8;
-
+#ifndef __cplusplus
 typedef u8 bool;
+#endif
 
+#ifdef __cplusplus
+}
+#endif
 /*****************************************************************************/
 
 #endif /* INC_STL8_TYPES_H_ */

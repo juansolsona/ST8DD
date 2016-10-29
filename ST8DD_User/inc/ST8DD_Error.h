@@ -18,7 +18,9 @@
 
 #ifndef INC_STL8_ERROR_H_
 #define INC_STL8_ERROR_H_
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 /*****************************************************************************/
 /*                                 INCLUDES                                  */
 /*****************************************************************************/
@@ -50,5 +52,8 @@ typedef enum enST8DD_ErrorCodes
 /*                        PUBLIC FUNCTIONS PROTOTYPES                        */
 /*****************************************************************************/
 
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* INC_STL8_ERROR_H_ */

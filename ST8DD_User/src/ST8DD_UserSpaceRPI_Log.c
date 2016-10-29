@@ -1,5 +1,4 @@
 /*
-/*
     This file is part of ST8DD_User.
 
     ST8DD_User is free software: you can redistribute it and/or modify
@@ -33,6 +32,10 @@
 #include "ST8DD_Types.h"
 #include "ST8DD_Log.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*****************************************************************************/
 /*                    PUBLIC FUNCTIONS IMPLEMENTATIONS                       */
 /*****************************************************************************/
@@ -40,6 +43,9 @@ void ST8DD_RawLog(const char *str)
 {
    puts(str);
 }
+#ifdef __cplusplus
+}
+#endif
 /*****************************************************************************/
 /*                                   END                                     */
 /*****************************************************************************/
