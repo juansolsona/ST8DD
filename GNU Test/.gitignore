@@ -1,0 +1,6 @@
+# python
+*.pyc
+/autom4te.cache/
+/build-aux/
+/build-Host/
+/build-RSP/
