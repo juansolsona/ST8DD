@@ -3,7 +3,7 @@
 	<name>ST8DD_User</name>
 	<comment></comment>
 	<projects>
-		<project>GNU Test</project>
+		<project>GNU_Test</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
