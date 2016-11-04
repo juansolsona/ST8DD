@@ -26,24 +26,20 @@
 #include "stdio.h"
 #include "malloc.h"
 #include "string.h"
+#include <time.h>
 
-#ifdef __cplusplus
-extern "C"
-{
-#endif
 
 /*****************************************************************************/
 /*                         PRIVATE MACROS DEFINITONS                         */
 /*****************************************************************************/
-#if _POSIX_C_SOURCE >= 199309L
-#include <time.h>   // for nanosleep
-#else
-#include <unistd.h> // for usleep
-#endif
 #include "ST8DD_Error.h"
 #include "ST8DD_GPIO_HAL.h"
 #include "ST8DD_Types.h"
 #include "ST8DD_Log.h"
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
 #define RSP_GPIO_SYSFS_PATH "/sys/class/gpio"
 #define RSP_GPIO_EXPORTS_PATH "/export"
@@ -129,14 +125,10 @@ __attribute__ ((destructor)) static void ST8DD_ForceRelease(void)
  */
 static void ST8DD_RPI_SleepMS(u32 Milliseconds)
 {
-#if _POSIX_C_SOURCE >= 199309L
     struct timespec ts;
     ts.tv_sec = Milliseconds / 1000;
     ts.tv_nsec = (Milliseconds % 1000) * 1000000;
     nanosleep(&ts, NULL);
-#else
-    usleep(Milliseconds * 1000);
-#endif
 }
 /**
  * This function checks if a GPIO instance already exists on the system

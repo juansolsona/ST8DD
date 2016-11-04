@@ -29,6 +29,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/GNU_Test/include}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.dialect.std.767033782" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.c99" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.988999891" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2019522415" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.520771779" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -39,6 +42,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/GNU_Test/include}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.1988249123" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1370747602" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1771181399" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1347674231" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker">
@@ -73,19 +79,8 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.cross.exe.debug.1432424484.1048790598" name="/" resourcePath="tests">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.cross.exe.debug.1231672654" name="Cross GCC" superClass="cdt.managedbuild.toolchain.gnu.cross.exe.debug" unusedChildren="">
-							<option id="cdt.managedbuild.option.gnu.cross.prefix.126779565.737120906" name="Prefix" superClass="cdt.managedbuild.option.gnu.cross.prefix.126779565"/>
-							<option id="cdt.managedbuild.option.gnu.cross.path.1732703247.324731011" name="Path" superClass="cdt.managedbuild.option.gnu.cross.path.1732703247"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.compiler.31818836" name="Cross GCC Compiler" superClass="cdt.managedbuild.tool.gnu.cross.c.compiler.487790238"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.1661562327" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler.520771779"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.c.linker.1447122954" name="Cross GCC Linker" superClass="cdt.managedbuild.tool.gnu.cross.c.linker.1347674231"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.linker.612003275" name="Cross G++ Linker" superClass="cdt.managedbuild.tool.gnu.cross.cpp.linker.886663360"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.archiver.341668671" name="Cross GCC Archiver" superClass="cdt.managedbuild.tool.gnu.cross.archiver.1684855573"/>
-							<tool id="cdt.managedbuild.tool.gnu.cross.assembler.550239024" name="Cross GCC Assembler" superClass="cdt.managedbuild.tool.gnu.cross.assembler.2048460780"/>
-						</toolChain>
-					</folderInfo>
 					<sourceEntries>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="inc"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="tests"/>
 					</sourceEntries>
@@ -119,6 +114,9 @@
 								<option id="gnu.c.compiler.option.include.paths.1477363758" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
 								</option>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.542327936" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.710939617" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cross.cpp.compiler.2018789700" name="Cross G++ Compiler" superClass="cdt.managedbuild.tool.gnu.cross.cpp.compiler">
@@ -126,6 +124,9 @@
 								<option id="gnu.cpp.compiler.option.debugging.level.436224961" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.163797029" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.265391695" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1570385989" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -187,6 +188,9 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/GNU_Test/include}&quot;"/>
 								</option>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.938022248" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1924110921" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1357018817" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
@@ -196,6 +200,9 @@
 								</option>
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.1807367135" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.447827442" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.preprocessor.def.symbols.157212225" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="&quot;_XOPEN_SOURCE =500&quot;"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.220118221" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.1890398785" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base">
