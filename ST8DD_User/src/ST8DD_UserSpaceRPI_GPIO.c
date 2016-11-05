@@ -176,7 +176,6 @@ static ST8DD_ErrorCodes ST8DD_InternalReleaseGPIO(ST8DD_RPI_GPIO_Handle *Handle)
             RetValue = ST8DD_Err_InvalidPlatform;
         }
         // Now, let's check if the GPIO is really closed
-        fsync(fdGPIOExport);
         ST8DD_RPI_SleepMS(WAIT_SYS_TIME);
         close(fdGPIOExport);
         TestHandle = T8DD_RPI_CheckGPIO_Exists(Handle->GPIO_Ordinal);
@@ -251,7 +250,6 @@ static ST8DD_ErrorCodes ST8DD_RPI_RequestGPIO(ST8DD_GPIO_Id Id, ST8DD_GPIO_Handl
                     }
                     // Now, let's check if the GPIO is really opened
                     ST8DD_RPI_SleepMS(WAIT_SYS_TIME);
-                    fsync(fdGPIOExport);
                     // There is a bug in the GPIO SYSFS kernel implementation, and the file
                     // is not ready exactly right after returning from the creation /deletion call
 
@@ -315,6 +313,7 @@ static ST8DD_ErrorCodes ST8DD_RPI_ReleaseGPIO(ST8DD_GPIO_Handle Handle)
     }
     else
     {
+        ST8DD_RPI_GPIO_Handle *OldPointer=HeadInstances;
         ST8DD_RPI_GPIO_Handle *CurrentPointer = HeadInstances;
         ST8DD_InternalReleaseGPIO(Handle);
         /**
@@ -328,11 +327,12 @@ static ST8DD_ErrorCodes ST8DD_RPI_ReleaseGPIO(ST8DD_GPIO_Handle Handle)
         {
             do
             {
-                if (InternalHandle->Next == CurrentPointer)
+                if (CurrentPointer==InternalHandle )
                 {
-                    CurrentPointer->Next = InternalHandle->Next;
+                    OldPointer->Next =CurrentPointer->Next;
                     break;
                 }
+                OldPointer=CurrentPointer;
                 CurrentPointer = CurrentPointer->Next;
             } while (CurrentPointer != NULL);
         }

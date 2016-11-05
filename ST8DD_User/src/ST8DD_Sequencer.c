@@ -225,7 +225,7 @@ ST8DD_ErrorCodes ST8DD_Sequence_CreateSequence(ST8DD_Sequence **Sequence, ST8_GP
     return RetValue;
 }
 /*****************************************************************************/
-ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_ValChange_Tail(ST8DD_Sequence *Sequence, u32 *Ordinal, ST8DD_GPIO_Handle Handle, ST8DD_GPIO_Level Level, u32 WaitMilliseconds)
+ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_ValChange_Tail(ST8DD_Sequence *Sequence, u8 *Ordinal, ST8DD_GPIO_Handle Handle, ST8DD_GPIO_Level Level, u32 WaitMilliseconds)
 {
     ST8DD_ErrorCodes RetValue = ST8DD_Err_NoError;
     if (NULL == Sequence)
@@ -256,7 +256,7 @@ ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_ValChange_Tail(ST8DD_Sequence *Sequenc
 
 }
 /*****************************************************************************/
-ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_DirChange_Tail(ST8DD_Sequence *Sequence, u32 *Ordinal, ST8DD_GPIO_Handle Handle, ST8DD_GPIO_Direction Dir, u32 WaitMilliseconds)
+ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_DirChange_Tail(ST8DD_Sequence *Sequence, u8 *Ordinal, ST8DD_GPIO_Handle Handle, ST8DD_GPIO_Direction Dir, u32 WaitMilliseconds)
 {
     ST8DD_ErrorCodes RetValue = ST8DD_Err_NoError;
     if (NULL == Sequence)
@@ -288,7 +288,7 @@ ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_DirChange_Tail(ST8DD_Sequence *Sequenc
 }
 
 /*****************************************************************************/
-ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_ValRead_Tail(ST8DD_Sequence *Sequence, u32 *Ordinal, ST8DD_GPIO_Handle Handle, u32 WaitMilliseconds)
+ST8DD_ErrorCodes ST8DD_Sequence_InserGPIO_ValRead_Tail(ST8DD_Sequence *Sequence, u8 *Ordinal, ST8DD_GPIO_Handle Handle, u32 WaitMilliseconds)
 {
     ST8DD_ErrorCodes RetValue = ST8DD_Err_NoError;
     if (NULL == Sequence)
@@ -412,7 +412,7 @@ ST8DD_ErrorCodes ST8DD_Sequence_ReadExecutionResult(ST8DD_Sequence *Sequence, u8
  * @return
  */
 /*****************************************************************************/
-ST8DD_ErrorCodes ST8DD_Sequence_DestrySequence(ST8DD_Sequence *Sequence)
+ST8DD_ErrorCodes ST8DD_Sequence_DestroySequence(ST8DD_Sequence *Sequence)
 {
     ST8DD_ErrorCodes RetValue = ST8DD_Err_NoError;
     if (NULL == Sequence)
